@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 
 const Incident = () => {
@@ -102,8 +103,9 @@ const Incident = () => {
             <button
               type="submit"
               className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700"
+              onClick={SeneSoS}
             >
-              Submit Report
+              Send SOS
             </button>
           </div>
         </form>
@@ -112,4 +114,12 @@ const Incident = () => {
   );
 };
 
+const SeneSoS = async (event) => {
+  event.preventDefault();
+  const response = await axios.post("http://localhost:3000/send-sms", {
+    location: location,
+  });
+  console.log(response.data);
+  alert("SOS Sent!");
+};
 export default Incident;
