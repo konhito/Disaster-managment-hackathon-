@@ -1,45 +1,50 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { FastDial } from "./Extender";
 const Dashboard = () => {
-  const [isOnline, setIsOnline] = useState(navigator.onLine);
+  const [isOffline, setIsOffline] = useState(!navigator.onLine);
 
   useEffect(() => {
-    const handleOnline = () => {
-      setIsOnline(true);
-      console.log("You are online");
-    };
-
     const handleOffline = () => {
-      setIsOnline(false);
-      console.log("You are offline");
+      setIsOffline(true);
     };
 
-    window.addEventListener("online", handleOnline);
+    const handleOnline = () => {
+      setIsOffline(false);
+    };
+
     window.addEventListener("offline", handleOffline);
+    window.addEventListener("online", handleOnline);
 
     return () => {
-      window.removeEventListener("online", handleOnline);
       window.removeEventListener("offline", handleOffline);
+      window.removeEventListener("online", handleOnline);
     };
   }, []);
 
   return (
     <div>
-      <div>
-        <Navbar />
-      </div>
-      <div className="absolute top-[60%] left-0 w-full text-center z-10">
-        <span className="text-white text-3xl font-extrabold px-6 py-4 bg-black bg-opacity-60 rounded-lg shadow-lg">
-          "Responding Faster, Rebuilding Stronger."
-        </span>
-        <div></div>
-      </div>
+      {isOffline ? (
+        <FastDial />
+      ) : (
+        <div>
+          <div>
+            <Navbar />
+          </div>
+          <div className="absolute top-[60%] left-0 w-full text-center z-10">
+            <span className="text-white text-3xl font-extrabold px-6 py-4 bg-black bg-opacity-60 rounded-lg shadow-lg">
+              "Responding Faster, Rebuilding Stronger."
+            </span>
+            <div></div>
+          </div>
 
-      <div className=" h-screen">
-        <ImgPart />
+          <div className=" h-screen">
+            <ImgPart />
 
-        <Footer />
-      </div>
+            <Footer />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
