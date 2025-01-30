@@ -5,5 +5,15 @@ import FastDial from "./fastDial";
 import ChatApp from "./Chat";
 import NotFound from "./NotFound";
 import Community from "./Community";
+import Incident from "./Incident";
 
-export { Signin, Signup, Dashboard, FastDial, ChatApp, NotFound, Community };
+export {
+  Signin,
+  Signup,
+  Dashboard,
+  FastDial,
+  ChatApp,
+  NotFound,
+  Community,
+  Incident,
+};

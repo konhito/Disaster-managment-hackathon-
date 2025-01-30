@@ -9,6 +9,7 @@ import {
   ChatApp,
   NotFound,
   Community,
+  Incident,
 } from "./pages/Extender";
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
             <Route path="/emergency-services" element={<FastDial />} />
             <Route path="/emergency-chat" element={<ChatApp />} />
             <Route path="/Community" element={<Community />} />
+            <Route path="/incidents" element={<Incident />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

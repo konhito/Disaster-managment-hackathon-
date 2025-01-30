@@ -1,7 +1,7 @@
 const FastDial = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900">
-      <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-white">
+    <div className="flex flex-col items-center bg-[#1d232a] justify-center min-h-screen  dark:bg-gray-900">
+      <h2 className="text-2xl font-bold  mb-4 text-gray-800 dark:text-white">
         All Emergency India Numbers
       </h2>
       <div className="relative overflow-x-auto shadow-md rounded-lg max-w-[600px] w-full bg-white dark:bg-gray-800 p-4">
