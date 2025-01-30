@@ -1,7 +1,15 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "@/components/theme-provider";
 
-import { Signin, Signup, Dashboard } from "./pages/Extender";
+import {
+  Signin,
+  Signup,
+  Dashboard,
+  FastDial,
+  ChatApp,
+  NotFound,
+  Community,
+} from "./pages/Extender";
 
 const App = () => {
   return (
@@ -12,6 +20,10 @@ const App = () => {
             <Route path="/signup" element={<Signup />} />
             <Route path="/signin" element={<Signin />} />
             <Route path="/" element={<Dashboard />} />
+            <Route path="/emergency-services" element={<FastDial />} />
+            <Route path="/emergency-chat" element={<ChatApp />} />
+            <Route path="/Community" element={<Community />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
       </ThemeProvider>
