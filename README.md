@@ -62,6 +62,16 @@ This is a **real-time disaster management** web application designed to help use
 - \*\*Go to the frontend folder
 - \*\* type the command npm run dev..
 
+## Images
+
+![alt text](./images/1.png)
+![alt text](./images/2.png)
+![alt text](./images/3.png)
+![alt text](./images/4.png)
+![alt text](./images/5.png)
+![alt text](./images/6.png)
+![alt text](./images/7.png)
+
 ## 🛠️ Tech Stack
 
 ### Frontend:
