@@ -71,6 +71,7 @@ This is a **real-time disaster management** web application designed to help use
 ![alt text](./images/5.png)
 ![alt text](./images/6.png)
 ![alt text](./images/7.png)
+![alt text](./images/8.png)
 
 ## 🛠️ Tech Stack
 
