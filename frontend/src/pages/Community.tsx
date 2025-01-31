@@ -1,6 +1,4 @@
-import { useNavigate } from "react-router-dom";
 const Community = () => {
-  const nagivate = useNavigate();
   const ngos = [
     {
       name: "Helping Hands",
@@ -33,13 +31,15 @@ const Community = () => {
 
       <div className="grid grid-cols-1 cursor-pointer md:grid-cols-2 lg:grid-cols-3 gap-6 px-6">
         {ngos.map((ngo, index) => (
-          <div
-            key={index}
-            className="bg-gray-800 p-6 rounded-lg shadow-lg text-center"
-          >
-            <h2 className="text-2xl font-semibold mb-2">{ngo.name}</h2>
-            <p className="text-gray-300">{ngo.work}</p>
-          </div>
+          <a href="https://ngodarpan.gov.in/" target="_blank">
+            <div
+              key={index}
+              className="bg-gray-800 p-6 rounded-lg shadow-lg text-center"
+            >
+              <h2 className="text-2xl font-semibold mb-2">{ngo.name}</h2>
+              <p className="text-gray-300">{ngo.work}</p>
+            </div>
+          </a>
         ))}
       </div>
     </div>

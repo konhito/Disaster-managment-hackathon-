@@ -13,6 +13,7 @@ const Chat = () => {
       (position) => {
         const googleMapsLink = `https://www.google.com/maps?q=${position.coords.latitude},${position.coords.longitude}`;
         setLocation(googleMapsLink);
+        setInput(googleMapsLink);
       },
       () => alert("Failed to retrieve location.")
     );
