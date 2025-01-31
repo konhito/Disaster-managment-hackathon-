@@ -1,6 +1,18 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { FastDial } from "./Extender";
+
+import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+
+const mapContainerStyle = {
+  width: "80%",
+  height: "400px",
+};
+
+const center = {
+  lat: 31.2554, // Default latitude (New Delhi)
+  lng: 75.7049, // Default longitude (New Delhi)
+};
 const Dashboard = () => {
   const [isOffline, setIsOffline] = useState(!navigator.onLine);
 
@@ -40,7 +52,9 @@ const Dashboard = () => {
 
           <div className=" h-screen">
             <ImgPart />
-
+            <div className="flex justify-center items-center mt-4">
+              <MapComponent />
+            </div>
             <Footer />
           </div>
         </div>
@@ -54,9 +68,15 @@ function Navbar() {
   return (
     <nav className="bg-white border-gray-200 dark:bg-gray-900">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-          Disaster Relief Coordination Platform
-        </span>
+        <div className="flex gap-2">
+          <img
+            src="./618fbb6d-a5c6-4c5d-a259-d3ab17fb7cfd-removebg-preview.png"
+            className="h-[50px] w-[50px] translate-x-2"
+          />
+          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+            Disaster Relief Coordination Platform
+          </span>
+        </div>
 
         <div className="flex  gap-3 md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse justify-around">
           <button
@@ -214,5 +234,19 @@ function Footer() {
     </footer>
   );
 }
+
+const MapComponent = () => {
+  return (
+    <LoadScript googleMapsApiKey="AIzaSyBr_41k6M7BThI3aeOruBE2kCCBjh24doU">
+      <GoogleMap
+        mapContainerStyle={mapContainerStyle}
+        center={center}
+        zoom={10}
+      >
+        <Marker position={center} />
+      </GoogleMap>
+    </LoadScript>
+  );
+};
 
 export default Dashboard;

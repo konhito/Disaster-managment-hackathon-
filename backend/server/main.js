@@ -3,7 +3,9 @@ import twilio from "twilio";
 import cors from "cors";
 import nodemailer from "nodemailer";
 const app = express();
+import dotenv from "dotenv";
 
+dotenv.config();
 const port = 3000;
 app.use(express.json());
 app.use(cors());
@@ -51,8 +53,8 @@ app.get("/", (req, res) => {
 });
 
 const client = twilio(
-  "AC166fb3a3223ba9baae80dc3ceb7d10e6",
-  "6f30d2fc18e7a2dc49cbef89dad99ef0"
+  process.env.TWILIO_ACCOUNT_SID,
+  process.env.TWILIO_AUTH_TOKEN
 );
 
 app.post("/send-sms", async (req, res) => {
@@ -61,7 +63,7 @@ app.post("/send-sms", async (req, res) => {
     main();
     const response = await client.messages.create({
       body: `Emergency! I need help at this location: ${location}`,
-      from: "+18154860916",
+      from: process.env.TWILIO_PHONE_NUMBER,
       to: "+919399885012",
     });
     res.status(200).json({ message: "Message sent", sid: response.sid });
