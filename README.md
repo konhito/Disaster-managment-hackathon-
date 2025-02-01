@@ -14,6 +14,14 @@ This is a **real-time disaster management** web application designed to help use
 - If offline, the **last known location** is stored and sent when back online.
 - Emergency contacts and authorities receive immediate notifications.
 
+### Contributors
+- [Neetka](https://github.com/neetka) (Leader)
+- [Sanvi](https://github.com/sanviii19) (FrontEnd/UI)
+- [Aditya](https://github.com/konhito) (Backend)
+- [Arvind](https://github.com/Zan-pakto) (Backend)
+
+
+
 ### 🗺️ Live Map with Disaster Updates
 
 - **Google Maps API integration** for tracking **affected areas, shelters, and emergency services**.
